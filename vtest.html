@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.wrap {
+			width: 500px;
+			height: 500px;
+			position:relative;
+			border:1px solid #000;
+	}
+	.wrap div {
+		width:100px;
+		height:100px;
+		position:absolute;
+		background:pink;
+		font-size:24px;
+		font-weight:bold;
+		text-align:center;
+		line-height:100px;
+		color:#fff;
+
+	}
+	</style>
+	
+</head>
+<body>
+	<input  type="button" value='click' />
+	<div class='wrap'>
+		
+	</div>
+	<script type="text/javascript">
+		var wrap = document.getElementsByTagName('div')[0];
+		var div = wrap.getElementsByTagName('div');
+		var btn = document.getElementsByTagName('input')[0];
+	
+		var num = 0;
+
+		btn.onclick = function(){
+			
+			if(num==0){	
+				
+				for( var i = 0; i<5; i++){	
+					if(div[i] != null ){
+						//console.log('hshsh')
+						 wrap.removeChild(div[i]);
+					}
+					var divs= document.createElement('div');
+					wrap.appendChild(divs);
+					div[i].innerHTML = i ;						
+						div[i].style.left = i * 100 + 'px';
+						if( i <3){
+							div[i].style.top = i * 100 + 'px';
+						}else{
+							div[i].style.top = (4-i) * 100 + 'px';
+						}
+					}
+			}				
+			
+			if(num==1){
+				for( var i = 0; i<5; i++){
+					wrap.removeChild(div[i]);
+					var divs= document.createElement('div');
+					wrap.appendChild(divs);
+					div[i].innerHTML = i ;
+					div[i].style.top = i * 100 + 'px';
+					if( i <3){
+						div[i].style.left =(4-i) * 100 + 'px' ;
+					}else{
+						div[i].style.left = i * 100 + 'px';
+					}
+				}			
+			 }
+			if(num==2){
+				for( var i = 0; i<5; i++){
+					wrap.removeChild(div[i]);
+					var divs= document.createElement('div');
+					wrap.appendChild(divs);
+					div[i].innerHTML = i ;
+
+					div[i].style.left =(4-i)  * 100 + 'px' ;
+					if( i <3){
+						div[i].style.top =(4-i) * 100 + 'px';
+						
+					}else{
+						div[i].style.top =i * 100 + 'px' ;					
+					}
+					}
+			 }
+
+			if(num==3){
+				for( var i = 0; i<5; i++){
+					wrap.removeChild(div[i]);
+					var divs= document.createElement('div');
+					wrap.appendChild(divs);
+					div[i].innerHTML = i ;
+				 	div[i].style.top = i * 100 + 'px';
+					 	if( i <3){
+					 		div[i].style.left = i * 100 + 'px';
+					 	}else{
+					 		div[i].style.left = (4-i) * 100 + 'px';
+					 	}
+					 	}
+				}
+				num++;
+				if(num>3){
+					num=0;
+				// 	for( var i = 0; i<5; i++){
+				// 	wrap.removeChild(div[i]);
+				// }
+				}
+		}
+	</script>
+</body>
+</html>
